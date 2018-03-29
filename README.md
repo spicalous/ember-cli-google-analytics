@@ -3,6 +3,13 @@ ember-cli-google-analytics
 
 Provide common analytic tracking for your ember projects
 
+Very happy for contributions however it is preferable that this library will contain logic for generic analytics and not 
+anything specific that does belong in the majority of ember apps
+  
+Features:
+  - track page views on transitions
+
+
 Installation
 ------------------------------------------------------------------------------
 
@@ -21,7 +28,7 @@ Separate testing and production analytics by specifyong the id's like so:
 if (environment === 'development') {
   ENV.googleAnalyticsId = '<your-development-tracking-id>';
 }
-...
+
 if (environment === 'production') {
   ENV.googleAnalyticsId = '<your-production-tracking-id>';
 }
