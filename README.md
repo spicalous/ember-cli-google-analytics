@@ -1,7 +1,7 @@
 ember-cli-google-analytics
 ==============================================================================
 
-[Short description of the addon.]
+Provide common analytic tracking for your ember projects
 
 Installation
 ------------------------------------------------------------------------------
@@ -14,7 +14,28 @@ ember install ember-cli-google-analytics
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+Supply your google analytics id in `config/environment.js`
+
+Separate testing and production analytics by specifyong the id's like so:
+```
+if (environment === 'development') {
+  ENV.googleAnalyticsId = '<your-development-tracking-id>';
+}
+...
+if (environment === 'production') {
+  ENV.googleAnalyticsId = '<your-production-tracking-id>';
+}
+```
+
+
+Link to addon while developing https://ember-cli.com/extending/#link-to-addon-while-developing
+------------------------------------------------------------------------------
+
+While you are developing and testing, you can run npm link from the root of your addon project. This will make your addon locally available by name.
+
+Then run npm link <addon-name> in any hosting application project root to make a link to your addon in your node_modules directory, and add the addon to the package.json. Any change in your addon will now directly take effect in any project that links to it this way.
+
+While testing an addon using npm link, you need an entry in package.json with your addon name, with any valid npm version: `"<addon-name>":"version"`. You need to put `"ember-cli-google-analytics": "*"`.
 
 
 Contributing
