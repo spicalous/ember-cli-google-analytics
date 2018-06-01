@@ -2,12 +2,9 @@ ember-cli-google-analytics
 ==============================================================================
 
 Provide common analytic tracking for your ember projects
-
-Very happy for contributions however it is preferable that this library will contain logic for generic analytics and not 
-anything specific that does belong in the majority of ember apps
   
 Features:
-  - track page views on transitions
+  - track page views on route transitions
 
 
 Installation
@@ -23,7 +20,7 @@ Usage
 
 Supply your google analytics id in `config/environment.js`
 
-Separate testing and production analytics by specifyong the id's like so:
+You can separate testing and production analytics by specifying the id's like so:
 ```
 if (environment === 'development') {
   ENV.googleAnalyticsId = '<your-development-tracking-id>';
@@ -35,7 +32,7 @@ if (environment === 'production') {
 ```
 
 
-Link to addon while developing https://ember-cli.com/extending/#link-to-addon-while-developing
+Development
 ------------------------------------------------------------------------------
 
 While you are developing and testing, you can run npm link from the root of your addon project. This will make your addon locally available by name.
@@ -44,6 +41,7 @@ Then run npm link <addon-name> in any hosting application project root to make a
 
 While testing an addon using npm link, you need an entry in package.json with your addon name, with any valid npm version: `"<addon-name>":"version"`. You need to put `"ember-cli-google-analytics": "*"`.
 
+See https://ember-cli.com/extending/#link-to-addon-while-developing
 
 Contributing
 ------------------------------------------------------------------------------
