@@ -24,6 +24,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.googleAnalyticsId = 'googleAnalyticsId-dev';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -32,6 +33,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
+    ENV.googleAnalyticsId = 'googleAnalyticsId-test';
     // Testem prefers this...
     ENV.locationType = 'none';
 

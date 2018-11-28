@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-google-analytics',
+  name: require('./package').name,
 
   // for live reloading while developing addon
   isDevelopingAddon() {

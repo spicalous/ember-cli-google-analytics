@@ -2,6 +2,7 @@
 import { assert } from '@ember/debug';
 import Route from '@ember/routing/route';
 import { scheduleOnce } from '@ember/runloop';
+import { inject as service } from '@ember/service';
 
 function reportPagePathOnDidTransition(googleAnalyticsId, router) {
   gtag('config', googleAnalyticsId, {
@@ -20,6 +21,7 @@ export function initialize(application) {
   gtag('config', googleAnalyticsId);
 
   Route.reopen({
+    router: service(),
     actions: {
       didTransition() {
         this._super(...arguments);
