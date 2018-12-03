@@ -6,7 +6,7 @@ import { inject as service } from '@ember/service';
 
 function reportPagePathOnDidTransition(googleAnalyticsId, router) {
   gtag('config', googleAnalyticsId, {
-    'page_path': router.get('url')
+    'page_path': router.currentURL
   });
 }
 
@@ -21,7 +21,9 @@ export function initialize(application) {
   gtag('config', googleAnalyticsId);
 
   Route.reopen({
+
     router: service(),
+
     actions: {
       didTransition() {
         this._super(...arguments);
